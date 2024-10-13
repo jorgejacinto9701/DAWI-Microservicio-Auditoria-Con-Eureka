@@ -19,21 +19,25 @@ import lombok.Setter;
 @Table(name = "auditoria")
 public class Auditoria {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idAuditoria;
-	
-	@Column(name = "tipoBaseDatos", nullable = false, length = 100)
-	private String tipoBaseDatos;
-	
-	@Column(name = "baseDeDatos", nullable = false, length = 200)
-	private String baseDeDatos;
-	
-	@Column(name = "tabla", nullable = false, length = 100)
-	private String tabla;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaRegistro;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idAuditoria;
+
+    @Column(name = "tipoBaseDatos", nullable = false, length = 200)
+    private String tipoBaseDatos;
+
+    @Column(name = "nombreBaseDatos", nullable = false, length = 200)
+    private String nombreBaseDatos;
+
+    @Column(name = "nombreTabla", nullable = false, length = 200)
+    private String nombreTabla;
+    
+    @Column(name = "nombreMetodo", nullable = false, length = 300)
+    private String nombreMetodo;
+
+    @Column(name = "fechaRegistro", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaRegistro;
 	
 	
 }
